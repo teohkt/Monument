@@ -1,0 +1,108 @@
+<%- layout("./layouts/boilerplate")%>
+
+<div class="container">
+    <h1>Edit <%= place.title %></h1>
+
+    <form action="/eat/<%=place._id%>?_method=PUT" method="POST" novalidate class="validated-form mb-3" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label for="title">Title</label>
+            <input 
+                type="text" 
+                id="title" 
+                class="form-control" 
+                name="eatery[title]" 
+                required
+                aria-describedby="name"
+                value = "<%= place.title %>"
+            >
+        </div>
+        <div class="mb-3">
+            <label for="location">Location</label>
+            <input 
+                type="text" 
+                id="location" 
+                class="form-control" 
+                name="eatery[location]"
+                required
+                aria-describedby="location"
+                value = "<%= place.location %>"
+            >
+        </div>
+        <!-- <div class="mb-3">
+            <label for="image">Image</label>
+            <input 
+                type="text" 
+                id="image" 
+                class="form-control" 
+                name="eatery[image]"
+                required
+                aria-describedby="image link"
+                value = "<%= place.image %>"
+            >
+        </div> -->
+
+        <div class="mb-3 custom-file">
+            <label for="image" class="form-label">Upload Images</label>
+            <input class="form-control" type="file" id="image" name="image" multiple>
+            <label class="form-control-label" for="image">
+                <span class="form-file-text custom-file-label"></span>
+            </label>
+        </div>
+        <div class="mb-3">
+            <% place.images.forEach(function(img, i) { %> 
+                <img src=" <%= img.thumbnail %>  " alt="" class="img-thumbnail">
+                <div class="form-check-inline">
+                    <input type="checkbox" id="image<%= i %>" name="deleteImages[]" value="<%= img.filename %>">
+                </div>
+                <label for="image<%= i %>">Delete</label>
+            <% }) %> 
+            
+        </div>
+
+        <div class="mb-3">
+            <label for="description">Description</label>
+            <textarea 
+                type="text" 
+                id="description" 
+                class="form-control" 
+                name="eatery[description]" 
+                rows="5" 
+                required
+                aria-describedby="description"
+            ><%= place.description %>
+            </textarea>
+        </div>
+
+        <div class="mb-3">
+            <label for="price">Price</label>
+            <select id="price" class="form-select" aria-label="price bracket" name="eatery[price]">
+                <option id="$"" value="$">$ (Less than $10 per dish)</option>
+                <option id="$$" value="$$">$$ ($10-$20 per dish)</option>
+                <option id="$$$" value="$$$">$$$ ($21-$50 per dish)</option>
+                <option id="$$$$" value="$$$$">$$$$ ($51-$100 per dish)</option>
+                <option id="$$$$$" value="$$$$$">$$$$$ ($100+ per dish)</option>
+            </select>
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <a href="/eat/<%= place._id %>" class="btn btn-secondary">Cancel</a>
+
+    </form>
+
+    <div>
+        <form action="/eat/<%= place._id%>?_method=DELETE" method="POST">
+            <button class="btn btn-danger">Delete</button>
+        </form>
+    </div>
+
+</div>
+
+<script>
+    function selectDropDown() {
+        var dropdownSelection = "<%= place.price %>";
+        document.getElementById(dropdownSelection).setAttribute("Selected", "Selected");
+    };
+
+    window.onload = selectDropDown();
+
+</script>

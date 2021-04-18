@@ -1,0 +1,103 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  font-family: 'Lato', sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  overflow: auto;
+}
+
+.page-link {
+  color: black;
+}
+
+.active {
+  background-color: lightslategray;
+  color: white;
+}
+.btn-primary {
+  background-color: darkslategray;
+  border-color: darkslategray;
+}
+.btn-primary:hover {
+  background-color: lightslategray;
+  border-color: lightslategray;
+}
+
+.btn-success {
+  background-color: darkslategray;
+  border-color: darkslategray;
+}
+.btn-success:hover {
+  background-color: lightslategray;
+  border-color: lightslategray;
+}
+
+.landing-block {
+  margin-top: 10vh;
+  color: white;
+}
+
+.navbar {
+  position: relative;
+  width: 100%;
+  z-index: 10;
+  margin-bottom: 2em;
+}
+
+.nav-item {
+  margin-left: 2em;
+}
+
+.btn-outline-custom {
+  color: rgba(255, 255, 255, 0.55);
+  border-color: rgba(255, 255, 255, 0.55);
+}
+
+.btn-custom {
+  color: rgba(255, 255, 255, 0.55);
+  background-color: #212529;
+  border-color: #212529;
+}
+
+.btn-custom:hover {
+  color: white;
+}
+
+.center-title {
+  font-weight: 500;
+  font-size: 7em;
+  margin-bottom: 2rem;
+}
+/* This forces the footer to the bottom */
+.content {
+  flex: 1 0 auto;
+}
+.footer-banner {
+  margin-top: 5em;
+  flex-shrink: 0;
+  background-color: #212529;
+  height: 3em;
+  color: white;
+  z-index: 10;
+}
+
+.index-img {
+  height: 210px;
+  width: 100%;
+  object-fit: cover;
+}
+
+#cluster-map {
+  height: 400px;
+}
+
+#map {
+  height: 300px;
+}
