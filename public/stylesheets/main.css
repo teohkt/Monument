@@ -105,3 +105,9 @@ body {
 .carousel-item {
   height: 450px;
 }
+
+@media only screen and (max-width: 600px) {
+  .center-title {
+    font-size: 3em;
+  }
+}
