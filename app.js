@@ -180,7 +180,7 @@ app.use((err, req, res, next) => {
   res.status(statusCode).render('./layouts/error', { err })
 })
 
-const port = process.env.PORT
+const port = process.env.PORT || 3000
 app.listen(port, function () {
   console.log(`Monuments Connected, Serving on port ${port}`)
 })

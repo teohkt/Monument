@@ -101,3 +101,7 @@ body {
 #map {
   height: 300px;
 }
+
+.carousel-item {
+  height: 450px;
+}
