@@ -16,8 +16,6 @@ const MongoStore = require('connect-mongo')(session)
 const flash = require('connect-flash')
 const helmet = require('helmet')
 
-require('dotenv').config()
-
 // For Authentication
 const passport = require('passport')
 const LocalStrategy = require('passport-local')
