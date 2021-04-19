@@ -104,6 +104,20 @@ body {
 
 .carousel-item {
   height: 450px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.carousel-item-next,
+.carousel-item-prev,
+.carousel-item.active {
+  display: flex;
+}
+.carousel-item img {
+  object-fit: cover;
+  min-width: 100%;
+  min-height: 100%;
 }
 
 @media only screen and (max-width: 600px) {
