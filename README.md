@@ -1,5 +1,5 @@
 # Monument 2
-This is a sample website used to demonstrate CRUD capability with RESTful routes. It is compleated using MongoDB, Express, Angular, Node.js (MEAN stack). This project is currently running locally, but will be moved online similar to the other sample blog.
+This is a sample website used to demonstrate CRUD capability with RESTful routes. It is compleated using MongoDB, Express, Node.js (MEN stack). Currently hostend on Heroku (https://monument2.herokuapp.com/).
 
 # Development
 For development, a local MongoDB was used. 
